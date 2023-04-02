@@ -54,7 +54,7 @@ const LandingPage = () => {
             <li>
               <div className="flex items-center gap-x-6">
                 <div>
-                  <h3 className="text-base font-semibold leading-7 tracking-tight text-white">Raphael Masri</h3>
+                  <h3 className="text-base font-semibold leading-7 tracking-tight text-white">Pafael Pasri</h3>
                   <p className="text-sm font-semibold leading-6 text-blue-600">Co-Founder / CEO</p>
                 </div>
               </div>
