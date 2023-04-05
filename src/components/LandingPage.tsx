@@ -1,4 +1,13 @@
+import { useUser, SignIn, SignOutButton, SignInButton } from "@clerk/nextjs";
+import { GradientButton } from "./GradientButton";
+import { Spinner } from "./Spinner";
+
 const LandingPage = () => {
+
+  const { isLoaded, isSignedIn, user } = useUser();
+
+  if (!isLoaded) return <Spinner/>
+
   return (
 
     <><div>
@@ -33,18 +42,23 @@ const LandingPage = () => {
       </header>
 
 
-      <section className="mb-60 mt-60">
+      <section className=" mb-60 mt-60">
         <div className="text-center bg-white-50 text-gray-800 py-24 px-6">
-          <h1 className="text-white text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12 -mb-16">The best way to get rich<br /><span className="text-blue-600">is Chupala BICHOO</span></h1>
+          <h1 className="text-black text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12 -mb-16">The best way to get rich<br /><span className="text-blue-600">is FreeShipping</span></h1>
         </div>
-        <div className="flex justify-center space-x-5">
-          <button className="font-extrabold text-transparent text-4xl bg-clip-text bg-slate-950 bg-white animate-pulse hover:bg-gradient-to-r hover:from-blue-600 hover:to-cyan-600">Read more below</button>
-
-          <button className="bn39 "><span className="bn39span">Sign up</span></button>
+        <div className="flex justify-center">
+          <GradientButton>
+            {isSignedIn ?
+              <SignOutButton />
+              :
+              <SignInButton />
+            }
+          </GradientButton>
         </div>
+        <SignIn path="/sign-in" routing="path" signUpUrl="/sign-up" />
       </section>
 
-      <div id="Team"className="bg-transparent py-24 sm:py-32 mt-40">
+      <div id="Team" className="bg-transparent py-24 sm:py-32 mt-40">
         <div className="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
           <div className="max-w-2xl">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Meet our leadership</h2>
@@ -142,7 +156,7 @@ const LandingPage = () => {
             </div>
           </div>
           <div className="mt-10">
-          <button type="submit"className="bn39 w-full"><span className="bn39span">Submit</span></button>
+            <button type="submit" className="bn39 w-full"><span className="bn39span">Submit</span></button>
           </div>
         </form>
       </div></>

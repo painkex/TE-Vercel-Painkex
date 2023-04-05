@@ -6,7 +6,6 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { api } from "~/utils/api";
 
 import "~/styles/globals.css";
-import "~/styles/background.css";
 import "~/styles/button.css";
 
 const MyApp: AppType<{ session: Session | null }> = ({
