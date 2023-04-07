@@ -7,6 +7,7 @@ import { api } from "~/utils/api";
 
 import "~/styles/globals.css";
 import "~/styles/button.css";
+import "~/styles/background.css";
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
@@ -14,8 +15,8 @@ const MyApp: AppType<{ session: Session | null }> = ({
 }) => {
   return (
     <ClerkProvider {...pageProps}>
-    <Component {...pageProps} />
-  </ClerkProvider>
+      <Component {...pageProps} />
+    </ClerkProvider>
   );
 };
 
