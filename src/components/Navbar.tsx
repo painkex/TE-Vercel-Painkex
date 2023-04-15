@@ -1,6 +1,7 @@
-import { useUser } from "@clerk/nextjs";
+import { UserButton, useUser } from "@clerk/nextjs";
 import { Spinner } from "./Spinner";
 import { SignIn, SignOutButton, SignInButton } from "@clerk/nextjs";
+
 
 import DropdownProfileButton from "./Dropdown";
 
@@ -8,7 +9,7 @@ const Navbar = () => {
     const { isLoaded, user } = useUser();
 
     return (
-        <nav className="sticky top-0 left-0 w-screen p-3 z-10">
+        <nav className="bg-dark/50 container sticky top-0  mx-auto rounded-md py-4 px-8 backdrop-blur md:rounded-full z-10">
             <div className=" border-gray-200 bg-white rounded-xl">
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                     <div className="flex items-center">
@@ -18,7 +19,8 @@ const Navbar = () => {
                     <div className="flex items-center md:order-2">
                         {!isLoaded ? <Spinner /> : (
                             !user ? <SignInButton /> :
-                                <DropdownProfileButton profileImage={user?.profileImageUrl} />)
+                                <UserButton />
+                        )
                         }
                     </div>
                     <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="mobile-menu-2">

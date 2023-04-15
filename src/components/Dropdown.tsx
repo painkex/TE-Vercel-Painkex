@@ -46,12 +46,13 @@ const DropdownProfileButton: React.FC<Props> = ({ profileImage }) => {
             {isOpen && (
                 <div className="absolute top-full mt-2 p-1 right-0 z-10 bg-white shadow-md min-w-full  py-2 px-3 rounded-md">
                     <ul className="list-none space-y-1">
+
                         <li>
                             <Link className="block py-2 px-2 mr-5 hover:bg-gray-200 rounded-md min-w-full " href="/dashboard">Dashboard</Link>
                         </li>
                         <hr />
                         <li>
-                            <a onClick={() => signOut()} href="" className="block py-2 px-2 mr-5 hover:bg-gray-200 rounded-md min-w-full ">Sign out</a>
+                            <SignOutButton><a href="./" className='block py-2 px-2 mr-5 hover:bg-gray-200 rounded-md min-w-full'>Sign out</a></SignOutButton>
                         </li>
                     </ul>
                 </div>

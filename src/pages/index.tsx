@@ -1,18 +1,12 @@
-import { SignIn, SignOutButton, SignInButton } from "@clerk/nextjs";
+import { SignInButton } from "@clerk/nextjs";
 import { useUser } from "@clerk/clerk-react";
 import { type NextPage } from "next";
 import Head from "next/head";
-import Link from "next/link";
 import LandingPage from "~/components/LandingPage";
-
-import { RouterOutputs, api } from "~/utils/api";
-import { Spinner } from "~/components/Spinner";
+import { api } from "~/utils/api";
 import { GradientButton } from "~/components/GradientButton";
-import { Post } from "@prisma/client";
 import { useState } from "react";
-import Dashboard from "~/pages/dashboard";
 import Navbar from "~/components/Navbar";
-import Input from "~/components/Input";
 
 const Home: NextPage = () => {
   //const hello = api.example.hello.useQuery({ text: "from tRPC" });
@@ -28,15 +22,6 @@ const Home: NextPage = () => {
     },
   });
   // if (!data) return <Spinner />;
-  console.log(user);
-
-  type PostWithUser = RouterOutputs["posts"]["getAll"][number];
-
-  const PostView = (props: PostWithUser) => {
-    const { post, author } = props;
-    return <div key={post.id}>{post.content}</div>;
-  };
-
   return (
     <>
       <Head>

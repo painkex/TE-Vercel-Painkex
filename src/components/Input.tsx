@@ -25,12 +25,14 @@ const Input = () => {
         setIsValidUrl(validateUrl(inputValue));
     }
 
-    type PostWithUser = RouterOutputs["posts"]["getAll"][number];
+    /*  type PostWithUser = RouterOutputs["posts"]["getAll"][number];
+ 
+     const PostView = (props: PostWithUser) => {
+         const { post, author, createdAt } = props;
+         return <div key={post.id}>{post.content} {post.createdAt}</div>;
+     }; */
 
-    const PostView = (props: PostWithUser) => {
-        const { post, author } = props;
-        return <div key={post.id}>{post.content}</div>;
-    };
+
     return (
         <main className="flex flex-col items-center justify-center bg-fixed">
             <div className="flex">

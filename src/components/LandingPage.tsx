@@ -4,6 +4,8 @@ import { Spinner } from "./Spinner";
 import DropdownProfileButton from "./Dropdown";
 import Dashboard from "../pages/dashboard";
 import Navbar from "./Navbar";
+import Link from "next/link";
+import Image from "next/image";
 
 
 
@@ -105,22 +107,22 @@ const LandingPage = () => {
                   Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla.
                 </p>
                 <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-center">
-                  <a
+                  <Link
                     href="/links"
                     className="rounded-md bg-white px-10 py-4 text-sm font-semibold text-black shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                   >
                     Get started
-                  </a>
+                  </Link>
 
                 </div>
               </div>
               <div className="relative mt-16 h-80 lg:mt-8">
                 <img
-                  className="absolute left-0 top-0 w-[57rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10"
-                  src="photo.png"
+                  className="absolute  top-0 w-[28rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10 -left-28"
+                  src="hello.png"
                   alt="App screenshot"
-                  width={1824}
-                  height={1080}
+                  width={100}
+                  height={100}
                 />
               </div>
             </div>
@@ -142,7 +144,7 @@ const LandingPage = () => {
                   <div className="flex items-center gap-x-6">
                     <img className=" h-16 w-16 rounded-full" src={person.imageUrl} alt="" />
                     <div>
-                      <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900">{person.name}</h3>
+                      <h3 className="text-base font-semibold leading-7 tracking-tight text-white">{person.name}</h3>
                       <p className="text-sm font-semibold leading-6 text-indigo-600">{person.role}</p>
                     </div>
                   </div>
