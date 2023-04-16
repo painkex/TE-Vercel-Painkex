@@ -36,7 +36,8 @@ const Input = () => {
                     value={input}
                     onChange={handleChange}
                     disabled={isPosting} />
-                <button onClick={() => mutate({ content: input })} disabled={!isValidUrl}>Post</button>
+                <button onClick={() => mutate({ content: input })} disabled={!isValidUrl}
+                    className={`${!isValidUrl ? 'text-slate-400' : 'text-black'}`}>Post</button>
             </div>
             {!isValidUrl && <p className="text-red-600">Please enter a valid URL</p>}
         </main>
