@@ -5,23 +5,15 @@ import Head from "next/head";
 import LandingPage from "~/components/LandingPage";
 import { api } from "~/utils/api";
 import { GradientButton } from "~/components/GradientButton";
-import { useState } from "react";
 import Navbar from "~/components/Navbar";
+import { Spinner } from "~/components/Spinner";
 
 const Home: NextPage = () => {
   //const hello = api.example.hello.useQuery({ text: "from tRPC" });
+  const { isSignedIn } = useUser();
   const { data } = api.posts.getAll.useQuery();
-  const { isLoaded, isSignedIn, user } = useUser();
-  const [input, setInput] = useState<string>("");
-  const [open, setOpen] = useState(false)
-  const ctx = api.useContext();
-  const { mutate, isLoading: isPosting } = api.posts.create.useMutation({
-    onSuccess: () => {
-      setInput("");
-      void ctx.posts.getAll.invalidate();
-    },
-  });
-  // if (!data) return <Spinner />;
+
+  if (!data) return <Spinner />;
   return (
     <>
       <Head>

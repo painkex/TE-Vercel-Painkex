@@ -1,15 +1,11 @@
-import { useUser, SignIn, SignOutButton, SignInButton } from "@clerk/nextjs";
-import { GradientButton } from "./GradientButton";
-import { Spinner } from "./Spinner";
-import DropdownProfileButton from "./Dropdown";
-import Dashboard from "../pages/dashboard";
-import Navbar from "./Navbar";
+import { useUser, SignIn } from "@clerk/nextjs";
 import Link from "next/link";
-import Image from "next/image";
+import { Spinner } from "./Spinner";
 
 
 
 const LandingPage = () => {
+
   const people = [
     {
       name: 'Pafael Pasri',
@@ -25,24 +21,10 @@ const LandingPage = () => {
         'https://pbs.twimg.com/profile_images/1476882663441145857/RX78JrOe_400x400.jpg'
     }
   ]
-  const { isLoaded, isSignedIn, user } = useUser();
+  const { isLoaded } = useUser();
 
-  // if (!isLoaded) return <Spinner />
+  if (!isLoaded) return <Spinner />
 
-  const aaNavbar = () =>
-    <div className="sticky top-0 left-0 w-screen p-3 z-10">
-      <nav className="border-gray-200 bg-black -sm rounded-xl">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 z-10">
-          <a href="https://flowbite.com/" className="flex items-center">
-            <img src="logo.png" className="h-8 mr-3" alt="Flowbite Logo" />
-            <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">FreeShipping</span>
-          </a>
-          <div className="flex items-center md:order-2">
-            <DropdownProfileButton profileImage={user!.profileImageUrl} />
-          </div>
-        </div>
-      </nav>
-    </div>;
   return (
 
     <><div className="scroll-smooth">
@@ -99,9 +81,9 @@ const LandingPage = () => {
               </svg>
               <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
                 <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl">
-                  Boost your productivity.
+                  Boost your productivity
                   <br />
-                  Start using our app today.
+                  Start using our app today
                 </h2>
                 <p className="mt-6 text-lg leading-8 text-gray-300">
                   Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla.
@@ -132,7 +114,7 @@ const LandingPage = () => {
         <div className="bg-transparent py-24 sm:py-32">
           <div className="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
             <div className="max-w-2xl">
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Meet our leadership</h2>
+              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Meet our leadership</h2>
               <p className="mt-6 text-lg leading-8 text-gray-600">
                 Libero fames augue nisl porttitor nisi, quis. Id ac elit odio vitae elementum enim vitae ullamcorper
                 suspendisse.

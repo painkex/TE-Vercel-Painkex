@@ -1,4 +1,4 @@
-import { RouterOutputs, api } from "~/utils/api";
+import { api } from "~/utils/api";
 import { useState } from "react";
 
 const Input = () => {
@@ -24,13 +24,6 @@ const Input = () => {
         setInput(inputValue);
         setIsValidUrl(validateUrl(inputValue));
     }
-
-    /*  type PostWithUser = RouterOutputs["posts"]["getAll"][number];
- 
-     const PostView = (props: PostWithUser) => {
-         const { post, author, createdAt } = props;
-         return <div key={post.id}>{post.content} {post.createdAt}</div>;
-     }; */
 
 
     return (
