@@ -1,9 +1,6 @@
 import { UserButton, useUser } from "@clerk/nextjs";
 import { Spinner } from "./Spinner";
-import { SignIn, SignOutButton, SignInButton } from "@clerk/nextjs";
-
-
-import DropdownProfileButton from "./Dropdown";
+import { SignInButton } from "@clerk/nextjs";
 
 const Navbar = () => {
     const { isLoaded, user } = useUser();
