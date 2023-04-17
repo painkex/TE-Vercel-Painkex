@@ -1,3 +1,6 @@
 .background{
   background-image: url(image.svg);
+  background-size: cover;
+  background-attachment: fixed;
+
 }
