@@ -9,7 +9,7 @@ import { UserButton } from "@clerk/nextjs";
 
 type Post = RouterOutputs["posts"]["getAll"][number];
 
-const Dashboard: NextPage = () => {
+const Links: NextPage = () => {
     const { data: posts, isLoading } = api.posts.getAll.useQuery();
     const PostView = (props: Post) => {
         const { id, content, createdAt } = props;
@@ -62,4 +62,4 @@ const Dashboard: NextPage = () => {
 };
 
 
-export default Dashboard;
+export default Links;

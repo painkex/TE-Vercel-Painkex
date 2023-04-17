@@ -9,10 +9,8 @@ import Navbar from "~/components/Navbar";
 import { Spinner } from "~/components/Spinner";
 
 const Home: NextPage = () => {
-  const { isSignedIn } = useUser();
-  //const { data, isError, error, isLoadingError } = api.posts.getAll.useQuery();
-  //console.log({ isError, error, isLoadingError })
-  //if (!data) return <Spinner />;
+  const { isSignedIn, isLoaded } = useUser();
+  if (!isLoaded) return <Spinner />;
   return (
     <>
       <Head>
@@ -38,6 +36,7 @@ const Home: NextPage = () => {
                 </span>
               </h1>
             </div>
+
 
             <GradientButton>
               <SignInButton />
