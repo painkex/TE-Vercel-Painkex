@@ -4,22 +4,20 @@ import { z } from "zod";
 
 import {
   createTRPCRouter,
-  publicProcedure,
   protectedProcedure,
 } from "~/server/api/trpc";
 
 export const postsRouter = createTRPCRouter({
 
-  getAll: protectedProcedure.query(async ({ ctx }) => {
-    const posts = await ctx.prisma.post.findMany({
+  getAll: protectedProcedure.query( ({ ctx }) => {
+    if (!ctx?.userId) throw new TRPCError({code:"UNAUTHORIZED", message:"aaa"})
+    return ctx.prisma.post.findMany({
       where:{
         authorId:ctx.userId
       },
        orderBy: [{ createdAt: "desc"}]
     });
     
-    
-    return posts;
   }),
 
   getSecretMessage: protectedProcedure.query(() => {

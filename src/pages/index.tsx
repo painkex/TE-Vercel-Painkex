@@ -9,11 +9,10 @@ import Navbar from "~/components/Navbar";
 import { Spinner } from "~/components/Spinner";
 
 const Home: NextPage = () => {
-  //const hello = api.example.hello.useQuery({ text: "from tRPC" });
   const { isSignedIn } = useUser();
-  const { data } = api.posts.getAll.useQuery();
-
-  if (!data) return <Spinner />;
+  //const { data, isError, error, isLoadingError } = api.posts.getAll.useQuery();
+  //console.log({ isError, error, isLoadingError })
+  //if (!data) return <Spinner />;
   return (
     <>
       <Head>
