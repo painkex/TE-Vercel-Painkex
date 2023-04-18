@@ -25,7 +25,7 @@ const Links: NextPage = () => {
                 <a href="./"> <Image src="/freelogo.jpg" className="mr-3 mb-3" alt="Flowbite Logo" width={40} height={100} /></a>
                 <div className="-mb-px flex space-x-3 overflow-x-auto sm:space-x-1 flex-1 gap-1">
                     <Link href="./dashboard" className="text-gray-500 text-sm hover:border-b border-slate-300 p-8 py-0 hover:text-gray-900 font-semibold">Dashboard</Link>
-                    <div className="text-sm whitespace-nowrap border-b-2 pb-6 pt-1 leading-none text-primary transition sm:px-2 border-blue-600 font-semibold">
+                    <div className="text-sm whitespace-nowrap border-b-2 pb-5 pt-1 leading-none text-primary transition sm:px-2 border-blue-600 font-semibold">
                         <button>My links</button>
                     </div>
                 </div>

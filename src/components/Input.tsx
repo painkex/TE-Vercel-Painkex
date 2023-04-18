@@ -27,8 +27,8 @@ const Input = () => {
 
 
     return (
-        <main className="flex flex-col items-center justify-center bg-fixed">
-            <div className="flex">
+        <main className="flex  items-center justify-center bg-fixed">
+            <div className="flex m-4 -mt-9">
                 <input
                     type="text"
                     placeholder="Please enter your url !"
