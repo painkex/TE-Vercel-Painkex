@@ -1,6 +1,7 @@
-import { useUser, SignIn } from "@clerk/nextjs";
+import { useUser, SignIn, SignInButton } from "@clerk/nextjs";
 import Link from "next/link";
 import { Spinner } from "./Spinner";
+import { GradientButton } from "./GradientButton";
 
 
 
@@ -27,12 +28,17 @@ const LandingPage = () => {
 
   return (
 
-    <><div className="scroll-smooth">
+    <><div className="background flex min-h-screen flex-col items-center justify-center bg-fixed scroll-smooth">
       <section className=" mb-48 mt-48">
-        <div className="text-center bg-white-50 text-gray-800 py-24 px-6">
+        <div className="text-center bg-white-50 text-gray-800 py-20 px-6">
           <h1 className="text-white text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12 ">The best way to get rich<br /><span className="text-blue-600">is FreeShipping</span></h1>
+          <GradientButton>
+            <SignInButton />
+          </GradientButton>
         </div>
         <div className="flex justify-center">
+
+
 
           <div className="bg-transparent  mt-7 py-24 sm:py-32">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -89,13 +95,11 @@ const LandingPage = () => {
                   Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla.
                 </p>
                 <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-center">
-                  <Link
-                    href="/links"
-                    className="rounded-md bg-white px-10 py-4 text-sm font-semibold text-black shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-                  >
-                    Get started
-                  </Link>
-
+                  <div className="rounded-md bg-white px-10 py-4 text-sm font-semibold text-black shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+                    <SignInButton>
+                      Get started
+                    </SignInButton>
+                  </div>
                 </div>
               </div>
               <div className="relative mt-16 h-80 lg:mt-8">

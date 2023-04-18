@@ -14,7 +14,7 @@ const Links: NextPage = () => {
     const PostView = (props: Post) => {
         const { id, content } = props;
         return (
-            <div key={id} className="flex items-center justify-between mb-4">
+            <div key={id} className="flex items-center justify-between mb-4 border-b border-zinc-200">
                 <div className="font-medium text-gray-600">{content}</div>
                 <div className="text-blue-500 font-semibold cursor-pointer hover:text-blue-600 transition-all duration-200">
                     New Link
@@ -24,7 +24,7 @@ const Links: NextPage = () => {
     };
 
     return (
-        <main className="bg-white min-h-screen">
+        <main className="bg-gray-50 min-h-screen">
             <div className="flex items-center justify-between px-6 py-4 ">
                 <div className="flex items-center">
                     <a href="./">
