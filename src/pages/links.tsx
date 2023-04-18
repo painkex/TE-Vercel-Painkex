@@ -14,73 +14,58 @@ const Links: NextPage = () => {
     const PostView = (props: Post) => {
         const { id, content } = props;
         return (
-            <div key={id} className="text-black p-8 border-b border-slate-500 flex justify-between">
-                <div>{content}</div>
-                <div>Nouveau lien</div>
+            <div key={id} className="flex items-center justify-between mb-4">
+                <div className="font-medium text-gray-600">{content}</div>
+                <div className="text-blue-500 font-semibold cursor-pointer hover:text-blue-600 transition-all duration-200">
+                    New Link
+                </div>
             </div>
         );
     };
 
     return (
-        <main className="bg-gray-50">
-            <div className="flex sticky top-0 items-end  bg-white w-full z-40 border-b h-16  text-primary sm:px-6">
-                <a href="./">
-                    <Image
-                        src="/freelogo.jpg"
-                        className="mr-3 mb-3"
-                        alt="Flowbite Logo"
-                        width={40}
-                        height={100}
-                    />
-                </a>
-                <div className="-mb-px flex space-x-3 overflow-x-auto sm:space-x-1 flex-1 gap-1">
-                    <Link
-                        href="./dashboard"
-                        className="text-gray-500 text-sm hover:border-b border-slate-300 p-8 py-0 hover:text-gray-900 font-semibold"
-                    >
-                        Dashboard
+        <main className="bg-white min-h-screen">
+            <div className="flex items-center justify-between px-6 py-4 ">
+                <div className="flex items-center">
+                    <a href="./">
+                        <Image
+                            src="/freelogo.jpg"
+                            className="mr-3"
+                            alt="Flowbite Logo"
+                            width={40}
+                            height={100}
+                        />
+                    </a>
+                    <Link href="./dashboard">
+                        <div className="text-gray-600 font-medium cursor-pointer hover:text-gray-800 transition-all duration-200">
+                            Dashboard
+                        </div>
                     </Link>
-                    <div className="text-sm whitespace-nowrap border-b-2 pb-5 pt-1 leading-none text-primary transition sm:px-2 border-blue-600 font-semibold">
-                        <button>My links</button>
-                    </div>
+                    <div className="px-4 font-medium text-gray-600">/</div>
+                    <div className="text-blue-500 font-semibold">My Links</div>
                 </div>
-                <div className="flex items-end mb-3">
+                <div className="flex items-center">
                     <UserButton />
                 </div>
             </div>
 
-            <div className="max-w-screen-md mx-auto">
-                {isLoading ? (
-                    <Spinner />
-                ) : (
-                    <div className="flex justify-center bg-gray-50 sticky">
-                        <div className="sm:px-6 sm:py-28 lg:px-8">
-                            <div className="shadow-2xl sm:rounded-3xl sm:px-32 md:pt-20">
-                                <div className="max-w-screen-sm">
-                                    <h2 className="tracking-tight text-slate-500">
-                                        <Input />
-                                        <div
-                                            className="max-h-96 overflow-y-scroll mt-5"
-                                            style={{ scrollbarWidth: "none" }}
-                                        >
-                                            <div className="flex justify-between text-black font-bold p-8 border-b border-slate-500">
-                                                <div>Old Link</div>
-                                                <div>New Link</div>
-                                            </div>
-                                            {posts?.map((fullPost) => (
-                                                <PostView {...fullPost} key={fullPost.id} />
-                                            ))}
-                                        </div>
-                                    </h2>
-                                </div>
-                            </div>
+            <div className="max-w-screen-lg mx-auto py-20">
+                <div className="px-6 py-8 bg-white rounded-lg shadow-md">
+                    <h2 className="text-3xl font-bold text-gray-800 mb-6">My Links</h2>
+                    <Input />
+                    {isLoading ? (
+                        <Spinner />
+                    ) : (
+                        <div className="max-h-96 overflow-y-auto mt-6">
+                            {posts?.map((fullPost) => (
+                                <PostView {...fullPost} key={fullPost.id} />
+                            ))}
                         </div>
-                    </div>
-                )}
+                    )}
+                </div>
             </div>
         </main>
     );
 };
 
 export default Links;
-
