@@ -2,6 +2,7 @@ import { useUser, SignIn, SignInButton } from "@clerk/nextjs";
 import Link from "next/link";
 import { Spinner } from "./Spinner";
 import { GradientButton } from "./GradientButton";
+import Image from "next/image";
 
 
 
@@ -28,7 +29,7 @@ const LandingPage = () => {
 
   return (
 
-    <><div className="background flex min-h-screen flex-col items-center justify-center bg-fixed scroll-smooth">
+    <><div className="">
       <section className=" mb-48 mt-48">
         <div className="text-center bg-white-50 text-gray-800 py-20 px-6">
           <h1 className="text-white text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12 ">The best way to get rich<br /><span className="text-blue-600">is FreeShipping</span></h1>
@@ -103,11 +104,11 @@ const LandingPage = () => {
                 </div>
               </div>
               <div className="relative mt-16 h-80 lg:mt-8">
-                <img
+                <Image
                   className="absolute  top-0 w-[28rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10 -left-28"
-                  src="hello.png"
+                  src="/hello.png"
                   alt="App screenshot"
-                  width={100}
+                  width={35}
                   height={100}
                 />
               </div>
@@ -147,8 +148,8 @@ const LandingPage = () => {
           <div className="mx-auto w-full max-w-screen-xl">
             <div className="flex justify-around px-4 py-6 lg:py-8 md:grid-cols-4">
               <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Company</h2>
-                <ul className="text-black  font-medium">
+                <h2 className="mb-6 text-sm font-semibold text-gray-800 uppercase dark:text-white">Company</h2>
+                <ul className="text-gray-600  font-medium">
                   <li className="mb-4">
                     <a href="#" className=" hover:underline">About</a>
                   </li>
@@ -164,8 +165,8 @@ const LandingPage = () => {
                 </ul>
               </div>
               <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Help center</h2>
-                <ul className="text-black  font-medium">
+                <h2 className="mb-6 text-sm font-semibold text-gray-800 uppercase dark:text-white">Help center</h2>
+                <ul className="text-gray-600  font-medium">
                   <li className="mb-4">
                     <a href="#" className="hover:underline">Discord Server</a>
                   </li>
@@ -181,8 +182,8 @@ const LandingPage = () => {
                 </ul>
               </div>
               <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
-                <ul className="text-black  font-medium">
+                <h2 className="mb-6 text-sm font-semibold text-gray-800 uppercase dark:text-white">Legal</h2>
+                <ul className="text-gray-600  font-medium">
                   <li className="mb-4">
                     <a href="#" className="hover:underline">Privacy Policy</a>
                   </li>
@@ -195,8 +196,8 @@ const LandingPage = () => {
                 </ul>
               </div>
               <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Download</h2>
-                <ul className="text-black  font-medium">
+                <h2 className="mb-6 text-sm font-semibold text-gray-800 uppercase dark:text-white">Download</h2>
+                <ul className="text-gray-600 font-medium">
                   <li className="mb-4">
                     <a href="#" className="hover:underline">iOS</a>
                   </li>

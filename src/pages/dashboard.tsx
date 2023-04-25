@@ -29,20 +29,20 @@ const Dashboard: NextPage = () => {
                 <div className="flex items-center">
                     <a href="./">
                         <Image
-                            src="/freelogo.jpg"
-                            className="mr-3"
+                            src="/LogoMakr.png"
+                            className="mr-5"
                             alt="Flowbite Logo"
-                            width={40}
+                            width={35}
                             height={100}
                         />
                     </a>
-                    <div className="text-blue-500 font-semibold">
+                    <div className="text-blue-700 font-semibold">
                         Dashboard
                     </div>
                     <div className="px-4 font-medium text-gray-600">/</div>
 
                     <Link href="./links">
-                        <div className="text-gray-600 font-medium cursor-pointer hover:text-gray-800 transition-all duration-200">
+                        <div className="text-gray-400 font-medium cursor-pointer hover:text-gray-800 transition-all duration-200">
                             My Links
                         </div>
                     </Link>

@@ -1,6 +1,7 @@
 import { UserButton, useUser } from "@clerk/nextjs";
 import { Spinner } from "./Spinner";
 import { SignInButton } from "@clerk/nextjs";
+import Image from "next/image";
 
 const Navbar = () => {
     const { isLoaded, user } = useUser();
@@ -10,7 +11,13 @@ const Navbar = () => {
             <div className=" border-gray-200 bg-white rounded-xl">
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                     <div className="flex items-center">
-                        <img src="freelogo.jpg" className="h-8 mr-3" alt="Flowbite Logo" />
+                        <Image
+                            src="/LogoMakr.png"
+                            className="mr-5"
+                            alt="Flowbite Logo"
+                            width={35}
+                            height={100}
+                        />
                         <span className="self-center text-2xl font-semibold whitespace-nowrap text-blue-700 ">ShippingWatcher</span>
                     </div>
                     <div className="flex items-center md:order-2">

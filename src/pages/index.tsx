@@ -23,14 +23,13 @@ const Home: NextPage = () => {
         {isSignedIn ? (
           <>
             <Links />
-
           </>
         ) : (
-          <>
+          <div className="background flex min-h-screen flex-col items-center justify-center bg-fixed scroll-smooth">
             <Navbar />
             <LandingPage />
+          </div>
 
-          </>
         )}
       </main>
     </>

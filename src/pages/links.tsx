@@ -29,39 +29,43 @@ const Links: NextPage = () => {
                 <div className="flex items-center">
                     <a href="./">
                         <Image
-                            src="/freelogo.jpg"
-                            className="mr-3"
+                            src="/LogoMakr.png"
+                            className="mr-5"
                             alt="Flowbite Logo"
-                            width={40}
+                            width={35}
                             height={100}
                         />
                     </a>
+
                     <Link href="./dashboard">
-                        <div className="text-gray-600 font-medium cursor-pointer hover:text-gray-800 transition-all duration-200">
+                        <div className="text-gray-400 font-medium cursor-pointer hover:text-gray-800 transition-all duration-200">
                             Dashboard
                         </div>
                     </Link>
                     <div className="px-4 font-medium text-gray-600">/</div>
-                    <div className="text-blue-500 font-semibold">My Links</div>
+                    <div className="text-blue-700 font-semibold">My Links</div>
                 </div>
+
                 <div className="flex items-center">
                     <UserButton />
                 </div>
             </div>
 
-            <div className="max-w-screen-lg mx-auto py-20">
-                <div className="px-6 py-8 bg-white rounded-lg shadow-md">
-                    <h2 className="text-3xl font-bold text-gray-800 mb-6">My Links</h2>
-                    <Input />
-                    {isLoading ? (
-                        <Spinner />
-                    ) : (
-                        <div className="max-h-96 overflow-y-auto mt-6">
-                            {posts?.map((fullPost) => (
-                                <PostView {...fullPost} key={fullPost.id} />
-                            ))}
-                        </div>
-                    )}
+            <div className="max-w-screen-lg mx-auto py-5 px-4 md:px-0">
+                <div className="bg-white rounded-lg shadow-2xl ">
+                    <h2 className="text-3xl font-bold text-gray-800 mb-6 px-6 py-8 md:px-10 md:py-12">My Links</h2>
+                    <div className="px-6 md:px-10 ">
+                        <Input />
+                        {isLoading ? (
+                            <Spinner />
+                        ) : (
+                            <div className="max-h-96 overflow-y-auto mt-6">
+                                {posts?.map((fullPost) => (
+                                    <PostView {...fullPost} key={fullPost.id} />
+                                ))}
+                            </div>
+                        )}
+                    </div>
                 </div>
             </div>
         </main>
